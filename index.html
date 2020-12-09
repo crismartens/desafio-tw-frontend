@@ -4,25 +4,26 @@
     <meta charset="utf-8">
     <title>Desafio</title>
     <script src="node_modules/angular/angular.min.js"></script>
-    <!--    <script src="node_modules/angular-route/angular-route.min.js"></script>-->
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="index.js"></script>
     <script src="js/app.js"></script>
     <script src="js/crud.js"></script>
+    <script src="js/article.js"></script>
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
+    <script src="node_modules/jquery/dist/jquery.slim.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen"/>
+
 </head>
 
 <body>
 
-<header></header>
-
-<div>
-    <p>DESAFIO</p>
-    {{value}}
-    <crud></crud>
-</div>
-
-<footer></footer>
+<app-header></app-header>
+<app-crud></app-crud>
+<app-article></app-article>
+<app-footer></app-footer>
 
 </body>
 </html>

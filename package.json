@@ -16,6 +16,9 @@
   "homepage": "https://bitbucket.org/kryzmartens/desafio-tw-frontend#readme",
   "dependencies": {
     "angular": "^1.8.2",
-    "angular-route": "^1.8.2"
+    "angular-route": "^1.8.2",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   }
 }

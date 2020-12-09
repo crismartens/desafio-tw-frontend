@@ -1,6 +1,6 @@
 angular.module('app')
     .directive(
-        'header',
+        'appHeader',
         function() {
             return {
                 templateUrl:'../views/header.html',

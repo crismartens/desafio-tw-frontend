@@ -1,0 +1,65 @@
+<div class="update" >
+
+    <div class="container">
+        <div class="row">
+
+            <h1>Nova Atividade</h1>
+
+            <form name="myForm" class="form-horizontal form">
+
+                <span>Data de Realização*:</span>
+                <input class="formField"
+                       type="date"
+                       ng-model="atividade.data"
+                       min="{{minDate | date:'yyyy-MM-dd'}}"
+                       required/>
+                <br>
+
+                <span>Prioridade*:</span>
+                <label required>
+                    <input type="radio" ng-model="atividade.prioridade" value="normal">
+                    Normal
+                    <input type="radio" ng-model="atividade.prioridade" value="urgente">
+                    Urgente
+                </label>
+                <br>
+
+                {{atividade.prioridade}}
+
+                <span>Nome* | Máx 25 caracteres:</span>
+                <input class="formField"
+                       type="text"
+                       ng-model="atividade.nome"
+                       ng-maxlength="25"
+                       required/>
+                <br>
+
+                <label for="repeatSelect"> Tipo*: </label>
+                <select class="formField"
+                        name="repeatSelect"
+                        id="repeatSelect"
+                        ng-model="atividade.tipo"
+                        required>
+                    <option ng-repeat="option in tipos" value="{{option}}">
+                        {{option}}
+                    </option>
+                </select>
+                <br>
+
+                <span>Descrição | Máx 120 caracteres:</span>
+                <textarea ng-model="atividade.descricao"
+                          ng-maxlength="120"
+                          rows="5">
+                </textarea>
+                <br>
+
+                <span>*Campos Obrigatórios.</span>
+
+            </form>
+
+        </div>
+    </div>
+
+    <button ng-disabled="myForm.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
+
+</div>

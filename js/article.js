@@ -1,11 +1,11 @@
 angular.module('app')
     .directive(
-        'appFooter',
+        'appArticle',
         function() {
             return {
-                templateUrl:'../views/footer.html',
+                templateUrl:'../views/article.html',
                 link: function (scope, element, attrs) {
-                    scope.footer = 'Footer';
+
                 }
             }
         });
