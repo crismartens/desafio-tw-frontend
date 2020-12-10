@@ -5,8 +5,8 @@
 
             <h1>Editar Atividades</h1>
 
-            <div class="table-responsive" style="overflow-x:auto;" ng-if="!atividade">
-                <table class="table table-sm">
+            <div class="table-responsive" style="overflow-x:auto;" ng-show="!atividade">
+                <table class="table table-hover">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -31,7 +31,7 @@
                 </table>
             </div>
 
-            <form name="upForm" class="form-horizontal form" ng-if="atividade">
+            <form name="upForm" class="form-horizontal form" ng-show="atividade">
 
                 <span>Data de Realização*:</span>
                 <input class="formField"
@@ -83,6 +83,7 @@
         </div>
     </div>
 
-    <button ng-if="atividade"ng-click="update()" ng-disabled="upForm.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
+    <button ng-show="atividade" ng-click="update()" ng-disabled="upForm.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
+    <button ng-show="atividade" ng-click="cancel()" type="button" class="confirm btn btn-light">CANCELAR</button>
 
 </div>

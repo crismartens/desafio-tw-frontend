@@ -73,6 +73,10 @@ app.controller('updateController', [
                 });
             });
         }
+        $scope.cancel = function () {
+                $scope.atividade = false;
+                $scope.selecionados = {};
+        }
     }]);
 
 app.controller('listController', [

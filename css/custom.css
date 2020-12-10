@@ -123,3 +123,10 @@ footer {
 .formField {
     height: 30px;
 }
+
+
+.update .table-hover tbody tr:hover {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}
