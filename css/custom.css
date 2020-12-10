@@ -71,10 +71,6 @@ footer {
     z-index: 9
 }
 
-.selected {
-    background: blueviolet !important;
-}
-
 .article {
     padding-top: 75px;
     padding-bottom: 75px;
@@ -100,16 +96,29 @@ footer {
     max-width: 750px;
 }
 
+.list .row{
+    display: inline-grid;
+    width: 100%;
+    max-width: 750px;
+}
+
+.delete .row{
+    display: inline-grid;
+    width: 100%;
+    max-width: 750px;
+}
+
+.main .row{
+    display: inline-grid;
+    width: 100%;
+    max-width: 750px;
+}
+
 .form {
     padding: 25px;
     display: grid;
     text-align: left;
 }
-
-/*.form.ng-invalid {*/
-/*    background: red;*/
-/*    color:white;*/
-/*}*/
 
 .formField {
     height: 30px;

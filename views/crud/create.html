@@ -1,4 +1,4 @@
-<div class="update" >
+<div class="create" >
 
     <div class="container">
         <div class="row">
@@ -14,17 +14,6 @@
                        min="{{minDate | date:'yyyy-MM-dd'}}"
                        required/>
                 <br>
-
-                <span>Prioridade*:</span>
-                <label required>
-                    <input type="radio" ng-model="atividade.prioridade" value="normal">
-                    Normal
-                    <input type="radio" ng-model="atividade.prioridade" value="urgente">
-                    Urgente
-                </label>
-                <br>
-
-                {{atividade.prioridade}}
 
                 <span>Nome* | Máx 25 caracteres:</span>
                 <input class="formField"
@@ -46,6 +35,15 @@
                 </select>
                 <br>
 
+                <span>Prioridade*:</span>
+                <label required>
+                    <input type="radio" ng-model="atividade.prioridade" value="Normal" ng-disabled="!atividade.tipo">
+                    Normal
+                    <input type="radio" ng-model="atividade.prioridade" value="Urgente" ng-disabled="!atividade.tipo || atividade.tipo==='Desenvolvimento'">
+                    Urgente
+                </label>
+                <br>
+
                 <span>Descrição | Máx 120 caracteres:</span>
                 <textarea ng-model="atividade.descricao"
                           ng-maxlength="120"
@@ -60,6 +58,6 @@
         </div>
     </div>
 
-    <button ng-disabled="myForm.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
+    <button ng-click="create()" ng-disabled="myForm.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
 
 </div>

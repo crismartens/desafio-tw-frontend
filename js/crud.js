@@ -6,7 +6,7 @@ angular.module('app')
                 templateUrl:'../views/crud.html',
                 link: function (scope, element, attrs) {
 
-                    scope.actions = ['CRIAR', 'EDITAR', 'LISTAR', 'EXCLUIR', ""];
+                    scope.actions = ['CRIAR', 'LISTAR', 'EDITAR', 'EXCLUIR', ""];
                     scope.selected = scope.actions[0];
 
                     scope.select = function (option) {
