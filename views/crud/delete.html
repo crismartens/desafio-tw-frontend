@@ -5,8 +5,8 @@
 
             <h1>Excluir Atividades</h1>
 
-            <div class="table-responsive" style="overflow-x:auto;">
-                <table class="table table-sm">
+            <div class="table-responsive">
+                <table class="table table-hover">
                     <thead>
                     <tr>
                         <th scope="col"></th>
@@ -19,9 +19,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="a in atividades | orderBy : 'data'">
-                        <th><input type="radio" ng-model="selecionados[a.id]" value="true" ng-click = "selecionados[a.id] ? selecionados[a.id] = null : true"></th>
-                        <th scope="row">{{$index+1}}</th>
+                    <tr ng-repeat="a in atividades | orderBy : 'id'" ng-click="select(a)">
+                        <th><input type="radio" ng-checked="selecionados[a.id] || false"></th>
+                        <th scope="row">{{a.id}}</th>
                         <td>{{ a.data  | date:'yyyy-MM-dd' }}</td>
                         <td>{{ a.prioridade }}</td>
                         <td>{{ a.nome }}</td>
@@ -35,6 +35,6 @@
         </div>
     </div>
 
-    <button ng-click="delete()" ng-disabled="delForm.atividade.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
+    <button ng-click="delete()" type="button" class="confirm btn btn-light">CONFIRMAR</button>
 
 </div>

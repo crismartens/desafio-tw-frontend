@@ -83,7 +83,9 @@
         </div>
     </div>
 
-    <button ng-show="atividade" ng-click="update()" ng-disabled="upForm.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
-    <button ng-show="atividade" ng-click="cancel()" type="button" class="confirm btn btn-light">CANCELAR</button>
+    <div ng-show="atividade">
+        <button ng-click="update()" ng-disabled="upForm.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
+        <button ng-click="clean()" type="button" class="confirm btn btn-light">CANCELAR</button>
+    </div>
 
 </div>

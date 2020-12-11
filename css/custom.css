@@ -108,7 +108,7 @@ footer {
     max-width: 750px;
 }
 
-.main .row{
+.home .row{
     display: inline-grid;
     width: 100%;
     max-width: 750px;
@@ -124,9 +124,12 @@ footer {
     height: 30px;
 }
 
-
 .update .table-hover tbody tr:hover {
     color: black;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.table-responsive {
+    overflow-x:auto;
 }

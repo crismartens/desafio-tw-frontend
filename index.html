@@ -6,11 +6,16 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="index.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/crud.js"></script>
-    <script src="js/article.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
+    <script src="js/directive/menu.js"></script>
+    <script src="js/directive/article.js"></script>
+    <script src="js/directive/header.js"></script>
+    <script src="js/directive/footer.js"></script>
+    <script src="js/factory/apiService.js"></script>
+    <script src="js/controller/create.js"></script>
+    <script src="js/controller/update.js"></script>
+    <script src="js/controller/list.js"></script>
+    <script src="js/controller/delete.js"></script>
+    <script src="js/constants/constants.js"></script>
     <script src="node_modules/jquery/dist/jquery.slim.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -20,7 +25,7 @@
 <body>
 
 <app-header></app-header>
-<app-crud></app-crud>
+<app-menu></app-menu>
 <app-article></app-article>
 <app-footer></app-footer>
 
