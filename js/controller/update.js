@@ -12,8 +12,8 @@ angular.module('app')
                 $scope.atividade = angular.copy(atividade);
                 $scope.atividade.data = new Date($scope.atividade.data);
             };
-            $scope.update = function () {
-                ApiService.update($scope.atividade,$scope.atividade.id).then(function (data) {
+            $scope.update = function (atividade) {
+                ApiService.update(atividade,atividade.id).then(function (data) {
                     getList();
                 });
             }
@@ -22,7 +22,4 @@ angular.module('app')
             }
             getList();
             $scope.minDate = new Date();
-            ApiService.tipos().then(function(data){
-                $scope.tipos = data.data;
-            });
         }]);

@@ -19,7 +19,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="a in atividades | orderBy : 'id'" ng-click="select(a)">
+                    <tr ng-repeat="a in atividades | orderBy : 'id'"
+                        ng-click="select(a)">
                         <th><input type="radio" ng-checked="selecionados[a.id] || false"></th>
                         <th scope="row">{{a.id}}</th>
                         <td>{{ a.data  | date:'yyyy-MM-dd' }}</td>

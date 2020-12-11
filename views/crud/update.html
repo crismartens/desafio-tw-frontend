@@ -5,87 +5,11 @@
 
             <h1>Editar Atividades</h1>
 
-            <div class="table-responsive" style="overflow-x:auto;" ng-show="!atividade">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">DATA</th>
-                        <th scope="col">PRIORIDADE</th>
-                        <th scope="col">NOME</th>
-                        <th scope="col">TIPO</th>
-                        <th scope="col">DESCRIÇÃO</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="a in atividades | orderBy : 'data'"
-                        ng-click="editAtividade(a)">
-                        <td scope="row">{{$index+1}}</td>
-                        <td>{{ a.data  | date:'yyyy-MM-dd' }}</td>
-                        <td>{{ a.prioridade }}</td>
-                        <td>{{ a.nome }}</td>
-                        <td>{{ a.tipo }}</td>
-                        <td>{{ a.descricao || '-' }}</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+            <atividade-table ng-show="!atividade" atividades="atividades" atividade="atividade" tela="update" acao="editAtividade(atividade)"></atividade-table>
 
-            <form name="upForm" class="form-horizontal form" ng-show="atividade">
-
-                <span>Data de Realização*:</span>
-                <input class="formField"
-                       type="date"
-                       ng-model="atividade.data"
-                       ng-disabled="true">
-                <br>
-
-                <span>Nome* | Máx 25 caracteres:</span>
-                <input class="formField"
-                       type="text"
-                       ng-model="atividade.nome"
-                       ng-maxlength="25"
-                       required/>
-                <br>
-
-                <label for="repeatSelect"> Tipo*: </label>
-                <select class="formField"
-                        name="repeatSelect"
-                        id="repeatSelect"
-                        ng-model="atividade.tipo"
-                        required>
-                    <option ng-repeat="option in tipos" value="{{option}}">
-                        {{option}}
-                    </option>
-                </select>
-                <br>
-
-                <span>Prioridade*:</span>
-                <label required ng-disabled="!atividade.tipo">
-                    <input type="radio" ng-model="atividade.prioridade" value="Normal" ng-disabled="!atividade.tipo">
-                    Normal
-                    <input type="radio" ng-model="atividade.prioridade" value="Urgente" ng-disabled="!atividade.tipo || atividade.tipo==='Desenvolvimento'">
-                    Urgente
-                </label>
-                <br>
-
-                <span>Descrição | Máx 120 caracteres:</span>
-                <textarea ng-model="atividade.descricao"
-                          ng-maxlength="120"
-                          rows="5">
-                </textarea>
-                <br>
-
-                <span>*Campos Obrigatórios.</span>
-
-            </form>
+            <atividade-form ng-show="atividade" class="atividade-form" atividade="atividade" tela="update" acao="update(atividade)"></atividade-form>
 
         </div>
-    </div>
-
-    <div ng-show="atividade">
-        <button ng-click="update()" ng-disabled="upForm.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
-        <button ng-click="clean()" type="button" class="confirm btn btn-light">CANCELAR</button>
     </div>
 
 </div>

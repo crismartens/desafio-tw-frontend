@@ -5,59 +5,11 @@
 
             <h1>Nova Atividade</h1>
 
-            <form name="addForm" class="form-horizontal form">
-
-                <span>Data de Realização*:</span>
-                <input class="formField"
-                       type="date"
-                       ng-model="atividade.data"
-                       min="{{minDate | date:'yyyy-MM-dd'}}"
-                       required/>
-                <br>
-
-                <span>Nome* | Máx 25 caracteres:</span>
-                <input class="formField"
-                       type="text"
-                       ng-model="atividade.nome"
-                       ng-maxlength="25"
-                       required/>
-                <br>
-
-                <label for="repeatSelect"> Tipo*: </label>
-                <select class="formField"
-                        name="repeatSelect"
-                        id="repeatSelect"
-                        ng-model="atividade.tipo"
-                        required>
-                    <option ng-repeat="option in tipos" value="{{option}}">
-                        {{option}}
-                    </option>
-                </select>
-                <br>
-
-                <span>Prioridade*:</span>
-                <label required>
-                    <input type="radio" ng-model="atividade.prioridade" value="Normal" ng-disabled="!atividade.tipo">
-                    Normal
-                    <input type="radio" ng-model="atividade.prioridade" value="Urgente" ng-disabled="!atividade.tipo || atividade.tipo==='Desenvolvimento'">
-                    Urgente
-                </label>
-                <br>
-
-                <span>Descrição | Máx 120 caracteres:</span>
-                <textarea ng-model="atividade.descricao"
-                          ng-maxlength="120"
-                          rows="5">
-                </textarea>
-                <br>
-
-                <span>*Campos Obrigatórios.</span>
-
-            </form>
+            <atividade-form class="atividade-form" tela="create" atividade="atividade" acao="create(atividade)"></atividade-form>
 
         </div>
     </div>
 
-    <button ng-click="create()" ng-disabled="addForm.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
+<!--    <button ng-click="create()" ng-disabled="!!formInvalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>-->
 
 </div>

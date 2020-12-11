@@ -5,14 +5,11 @@ angular.module('app')
             clean = function () {
                 $scope.atividade = {};
             };
-            $scope.create = function () {
-                ApiService.create($scope.atividade).then(function(data){
+            $scope.create = function (atividade) {
+                ApiService.create(atividade).then(function(data){
                     clean();
                 });
             };
             clean();
-            $scope.minDate = new Date();
-            ApiService.tipos().then(function(data){
-                $scope.tipos = data.data;
-            });
+            $scope.formInvalid = {};
         }]);

@@ -3,7 +3,7 @@ angular.module('app')
         'appMenu',
         function(CONSTANTS) {
             return {
-                templateUrl:'../../views/menu.html',
+                templateUrl: '../../views/menu.html',
                 link: function (scope) {
                     scope.actions = CONSTANTS.menu;
                     scope.getRoute = function (option) {

@@ -1,0 +1,55 @@
+<form name="atividadeForm" class="form-horizontal form">
+
+    {{atividadeForm.$invalid}}
+
+    <span>Data de Realização*:</span>
+    <input class="formField"
+           type="date"
+           ng-model="atividade.data"
+           min="{{tela === 'create' ? (minDate | date:'yyyy-MM-dd') : null}}"
+           ng-disabled="tela === 'update'">
+    <br>
+
+    <span>Tipo*: </span>
+    <select class="formField"
+            name="repeatSelect"
+            ng-model="atividade.tipo"
+            required>
+        <option ng-repeat="option in tipos" value="{{option}}">
+            {{option}}
+        </option>
+    </select>
+    <br>
+
+    <span>Prioridade*:</span>
+    <label required ng-disabled="!atividade.tipo">
+        <input type="radio" ng-model="atividade.prioridade" value="Normal" ng-disabled="!atividade.tipo">
+        Normal
+        <input type="radio" ng-model="atividade.prioridade" value="Urgente" ng-disabled="!atividade.tipo || atividade.tipo==='Desenvolvimento'">
+        Urgente
+    </label>
+    <br>
+
+    <span>Nome* | Máx 25 caracteres:</span>
+    <input class="formField"
+           type="text"
+           ng-model="atividade.nome"
+           ng-maxlength="25"
+           required/>
+    <br>
+
+    <span>Descrição | Máx 120 caracteres:</span>
+    <textarea ng-model="atividade.descricao"
+              ng-maxlength="120"
+              rows="5">
+    </textarea>
+    <br>
+
+    <span>*Campos Obrigatórios.</span>
+
+</form>
+
+<div>
+    <button ng-click="acao({atividade:atividade})" ng-disabled="atividadeForm.$invalid" type="button" class="confirm btn btn-light">CONFIRMAR</button>
+    <button ng-if="tela==='update'" ng-click="clean()" type="button" class="confirm btn btn-light">CANCELAR</button>
+</div>

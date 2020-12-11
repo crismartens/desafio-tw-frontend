@@ -114,6 +114,14 @@ footer {
     max-width: 750px;
 }
 
+.atividade-form {
+    display: grid;
+}
+
+.atividade-form button{
+    display: inline-grid;   
+}
+
 .form {
     padding: 25px;
     display: grid;
