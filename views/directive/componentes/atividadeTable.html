@@ -4,9 +4,9 @@
         <th scope="col" ng-if="tela==='delete'"></th>
         <th scope="col">#</th>
         <th scope="col">DATA</th>
+        <th scope="col">TIPO</th>
         <th scope="col">PRIORIDADE</th>
         <th scope="col">NOME</th>
-        <th scope="col">TIPO</th>
         <th scope="col">DESCRIÇÃO</th>
     </tr>
     </thead>
@@ -15,9 +15,9 @@
         <td ng-if="tela==='delete'"><input type="radio" ng-checked="selecionados[a.id] || false"></td>
         <td>{{a.id}}</td>
         <td>{{ a.data  | date:'yyyy-MM-dd' }}</td>
+        <td>{{ a.tipo }}</td>
         <td>{{ a.prioridade }}</td>
         <td>{{ a.nome }}</td>
-        <td>{{ a.tipo }}</td>
         <td>{{ a.descricao || '-' }}</td>
     </tr>
     </tbody>

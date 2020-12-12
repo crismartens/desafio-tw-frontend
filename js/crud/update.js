@@ -9,8 +9,10 @@ angular.module('app')
                 });
             };
             $scope.editAtividade = function (atividade) {
+                var atividadeData = new Date(atividade.data);
+                var showData = new Date(atividadeData.getTimezoneOffset()*60000+Date.parse(atividadeData));
                 $scope.atividade = angular.copy(atividade);
-                $scope.atividade.data = new Date($scope.atividade.data);
+                $scope.atividade.data = new Date(showData);
             };
             $scope.update = function (atividade) {
                 ApiService.update(atividade,atividade.id).then(function (data) {
