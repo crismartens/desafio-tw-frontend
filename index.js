@@ -3,8 +3,7 @@ app = angular.module('app', ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
         .when("/", {
-            templateUrl : "views/home.html",
-            controller:'homeController',
+            template : "<div class='title'><h1>Controle<br>de<br>Atividades</h1></div>"
         })
         .when("/criar", {
             templateUrl : "views/crud/create.html",

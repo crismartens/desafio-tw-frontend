@@ -1,10 +1,8 @@
 <div class="actions">
-    <div class="list"
+    <span class="list"
          ng-repeat="action in actions">
-        <a href="{{getRoute(action)}}">
-            <button type="button" class="btn btn-default">
-                {{action}}
-            </button>
+        <a class="col-12" href="{{getRoute(action)}}">
+            <span>{{action}}</span>
         </a>
-    </div>
+    </span>
 </div>

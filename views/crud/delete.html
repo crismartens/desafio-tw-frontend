@@ -6,36 +6,14 @@
             <h1>Excluir Atividades</h1>
 
             <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">#</th>
-                        <th scope="col">DATA</th>
-                        <th scope="col">PRIORIDADE</th>
-                        <th scope="col">NOME</th>
-                        <th scope="col">TIPO</th>
-                        <th scope="col">DESCRIÇÃO</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="a in atividades | orderBy : 'id'"
-                        ng-click="select(a)">
-                        <th><input type="radio" ng-checked="selecionados[a.id] || false"></th>
-                        <th scope="row">{{a.id}}</th>
-                        <td>{{ a.data  | date:'yyyy-MM-dd' }}</td>
-                        <td>{{ a.prioridade }}</td>
-                        <td>{{ a.nome }}</td>
-                        <td>{{ a.tipo }}</td>
-                        <td>{{ a.descricao || '-' }}</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <atividade-table atividades="atividades" selecionados="selecionados" tela="delete" acao="select(atividade)"></atividade-table>
+            </div>
+
+            <div>
+                <button ng-click="delete()" type="button" class="confirm btn btn-light">CONFIRMAR</button>
             </div>
 
         </div>
     </div>
-
-    <button ng-click="delete()" type="button" class="confirm btn btn-light">CONFIRMAR</button>
 
 </div>

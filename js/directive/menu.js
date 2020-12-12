@@ -7,7 +7,7 @@ angular.module('app')
                 link: function (scope) {
                     scope.actions = CONSTANTS.menu;
                     scope.getRoute = function (option) {
-                       return option !== 'HOME' ? "#!" + option.toLowerCase() : "#!";
+                       return "#!" + option.toLowerCase();
                     }
                 }
             }

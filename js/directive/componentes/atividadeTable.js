@@ -7,8 +7,9 @@ angular.module('app')
                     tela: "@tela",
                     acao: "&",
                     atividades: "=atividades",
-                    atividade: "=atividade"
+                    atividade: "=atividade",
+                    selecionados: "=selecionados"
                 },
-                templateUrl: '../../../views/componentes/atividadeTable.html',
+                templateUrl: '../../../views/componentes/atividadeTable.html'
             }
         });

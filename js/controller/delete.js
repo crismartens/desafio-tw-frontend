@@ -14,10 +14,11 @@ angular.module('app')
             $scope.delete = function () {
                 for (var [key, value] of Object.entries($scope.selecionados)) {
                     if (value) {
-                        ApiService.delete(key).then(function (data) {});
+                        ApiService.delete(key).then(function (data) {
+                            getList();
+                        });
                     }
                 }
-                getList();
             };
             getList();
         }]);

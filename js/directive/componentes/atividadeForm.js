@@ -18,6 +18,5 @@ angular.module('app')
                         scope.atividade = false;
                     }
                 }
-
             }
         });
