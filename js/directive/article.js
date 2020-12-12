@@ -3,6 +3,6 @@ angular.module('app')
         'appArticle',
         function() {
             return {
-                templateUrl:'../../views/article.html'
+                templateUrl:'../../views/directive/article.html'
             }
         });

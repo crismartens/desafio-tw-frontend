@@ -8,7 +8,7 @@ angular.module('app')
                     atividade: "=atividade",
                     acao: "&"
                 },
-                templateUrl: '../../../views/componentes/atividadeForm.html',
+                templateUrl: '../../../views/directive/componentes/atividadeForm.html',
                 link: function (scope) {
                     scope.minDate = new Date();
                     ApiService.tipos().then(function(data){

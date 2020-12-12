@@ -10,6 +10,6 @@ angular.module('app')
                     atividade: "=atividade",
                     selecionados: "=selecionados"
                 },
-                templateUrl: '../../../views/componentes/atividadeTable.html'
+                templateUrl: '../../../views/directive/componentes/atividadeTable.html'
             }
         });

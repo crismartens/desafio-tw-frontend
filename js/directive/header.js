@@ -3,6 +3,6 @@ angular.module('app')
         'appHeader',
         function() {
             return {
-                templateUrl:'../../views/header.html'
+                templateUrl:'../../views/directive/header.html'
             }
         });

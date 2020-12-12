@@ -3,6 +3,6 @@ angular.module('app')
         'appFooter',
         function() {
             return {
-                templateUrl:'../../views/footer.html'
+                templateUrl:'../../views/directive/footer.html'
             }
         });
