@@ -5,8 +5,8 @@ Requisitos para rodar/criar o projeto:
 2. Na máquina, rodar: npm install -g http-server
 
 Instruções para iniciar o Projeto:
-1. No FE, rodar: http-server
-2. NO FE, rodar: npm install
+1. NO FE, rodar: npm install
+2. No FE, rodar: npm start
 
 Passos de criação do projeto:
 1. Criar repositório FE com readme e gitignore
