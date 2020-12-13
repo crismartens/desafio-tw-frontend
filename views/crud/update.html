@@ -1,0 +1,17 @@
+<div class="update">
+
+    <div class="container">
+        <div class="row">
+
+            <h1>Editar Atividades</h1>
+
+            <div ng-show="!atividade" class="table-responsive">
+                <atividade-table atividades="atividades" atividade="atividade" tela="update" acao="editAtividade(atividade)"></atividade-table>
+            </div>
+
+            <atividade-form ng-show="atividade" class="atividade-form" atividade="atividade" tela="update" acao="update(atividade)"></atividade-form>
+
+        </div>
+    </div>
+
+</div>
