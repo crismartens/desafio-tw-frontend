@@ -5,7 +5,8 @@
            type="date"
            ng-model="atividade.data"
            min="{{tela === 'create' ? (minDate | date:'yyyy-MM-dd') : null}}"
-           ng-disabled="tela === 'update'">
+           ng-disabled="tela === 'update'"
+             required>
     <br>
 
     <span>Tipo*: </span>
@@ -20,10 +21,10 @@
     <br>
 
     <span>Prioridade*:</span>
-    <label required ng-disabled="!atividade.tipo">
-        <input type="radio" ng-model="atividade.prioridade" value="Normal" ng-disabled="!atividade.tipo">
+    <label ng-disabled="!atividade.tipo">
+        <input type="radio" ng-model="atividade.prioridade" value="Normal" ng-required="!atividade.prioridade" ng-disabled="!atividade.tipo">
         Normal
-        <input type="radio" ng-model="atividade.prioridade" value="Urgente" ng-disabled="!atividade.tipo || atividade.tipo==='Desenvolvimento'">
+        <input type="radio" ng-model="atividade.prioridade" value="Urgente"  ng-required="!atividade.prioridade" ng-disabled="!atividade.tipo || atividade.tipo==='Desenvolvimento'">
         Urgente
     </label>
     <br>
